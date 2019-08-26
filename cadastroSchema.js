@@ -5,21 +5,20 @@ const UsuarioSchema = new mongoose.Schema({
         type: String,
         require: true,
     },
+    endereco: {
+        type: String,
+    },
     email: {
         type: String,
-        // unique: true,
         require: true,
-        // lowercase: true,
     },
     password: {
         type: String,
         require: true,
-        // select: false,
     },
-    // createdAt: {
-    //     type: Date,
-    //     default: Date.now,
-    // },
+    descricao: {
+        type: String,
+    },
 });
 
 const UsuarioModel = mongoose.model('Usuario', UsuarioSchema);

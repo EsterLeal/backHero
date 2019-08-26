@@ -22,7 +22,6 @@ app.get('/', (req, res) => {
 app.get('/cadastrar', async (req, res) => {
     controller.getAll()
         .then(usuarios => res.send(usuarios))
-    // response.send(controller.getAll())
 })
 
 app.get('/cadastrar/:id', (req, res) => {
@@ -44,7 +43,7 @@ app.get('/cadastrar/:id', (req, res) => {
         })
 })
 
-app.post('/cadastrar', (req, res) => {
+app.post('/cadastrarUsuario', (req, res) => {
     controller.add(req.body)
         .then(usuario => {
             const _id = usuario._id
@@ -59,7 +58,7 @@ app.post('/cadastrar', (req, res) => {
         })
 })
 
-app.patch('/cadastrar/:id', (req, res) => {
+app.patch('/atualizarUsuario/:id', (req, res) => {
     const id = req.params.id
     controller.update(id, req.body)
         .then(usuario => {
@@ -75,7 +74,7 @@ app.patch('/cadastrar/:id', (req, res) => {
         })
 })
 
-app.delete('/cadastrar/:id', (req, res) => {
+app.delete('/deletarUsuario/:id', (req, res) => {
     controller.remove(req.params.id)
         .then(usuario => {
             if (usuario === null || usuario === undefined) {

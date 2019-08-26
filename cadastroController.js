@@ -27,9 +27,6 @@ const update = (id, Usuario) => {
       id,
       { $set: Usuario },
       { new: true }, // RETORNAR O USER JA ATUALIZADO NO CALLBACK
-      // function (error, usuario) { // é o nosso callback
-      //   return comida
-      // }
     )
   
   }
